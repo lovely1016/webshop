@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>angularjs指令-双向绑定</title>
+</head>
+<!--引入angualarjs-->
+<script src="js/angular.min.js"></script>
+<body>
+    <h3>angularjs指令-双向绑定:$scope-上下文对象</h3>
+
+    <!--
+        ng-model:定义一个变量,存到$scope
+        {{username}}:从$scope中取出username
+    -->
+    <div ng-app>
+        用户名:<input ng-model="username" /><br>
+        用户名:{{username}}
+    </div>
+
+</body>
+</html>

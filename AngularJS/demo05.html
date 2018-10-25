@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>angularjs指令-事件指令</title>
+</head>
+<!--引入angualarjs-->
+<script src="js/angular.min.js"></script>
+<script>
+    //创建一个angularjs模块
+    var app = angular.module('pinyougou',[]);
+
+    //编写一个控制器,相当于给app工程创建一个类,类的名字叫demoController,function相当于类的主题结构
+    app.controller('demoController',function ($scope) {
+
+        //定义一个运算方法
+        $scope.add=function () {
+            //运算
+            $scope.z =  parseInt($scope.x)+parseInt($scope.y);
+        }
+
+    });
+
+</script>
+<body>
+    <h3>angularjs指令-事件指令</h3>
+
+    <!--表示引用pinyougou模块-->
+    <div ng-app="pinyougou" ng-controller="demoController">
+        x:<input ng-model="x"><br/>
+        y:<input ng-model="y"><br/>
+
+        <!--页面输出不需要写$.scope-->
+        <button ng-click="add()">运算</button>{{z}}
+    </div>
+
+</body>
+</html>

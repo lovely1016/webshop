@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>angularjs指令-循环数组</title>
+</head>
+<!--引入angualarjs-->
+<script src="js/angular.min.js"></script>
+<script>
+    //创建一个angularjs模块
+    var app = angular.module('pinyougou',[]);
+
+    //编写一个控制器,相当于给app工程创建一个类,类的名字叫demoController,function相当于类的主题结构
+    app.controller('demoController',function ($scope) {
+
+       //定义一个数组
+        $scope.list = [1,3,4,6,8];
+
+    });
+
+</script>
+<body>
+    <h3>angularjs指令-循环数组</h3>
+
+    <!--表示引用pinyougou模块-->
+    <div ng-app="pinyougou" ng-controller="demoController">
+        <!--循环数组元素-->
+        <div ng-repeat="i in list">
+            {{i}}
+        </div>
+    </div>
+
+</body>
+</html>

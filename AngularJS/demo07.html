@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>angularjs指令-循环对象数组</title>
+</head>
+<!--引入angualarjs-->
+<script src="js/angular.min.js"></script>
+<script>
+    //创建一个angularjs模块
+    var app = angular.module('pinyougou',[]);
+
+    //编写一个控制器,相当于给app工程创建一个类,类的名字叫demoController,function相当于类的主题结构
+    app.controller('demoController',function ($scope) {
+
+       //定义一个数组
+        $scope.list = [
+            {"username":"小红","yuwen":90,"shuxue":89},
+            {"username":"小黄","yuwen":91,"shuxue":79},
+            {"username":"小蓝","yuwen":92,"shuxue":69},
+            {"username":"小黑","yuwen":94,"shuxue":59},
+        ];
+
+    });
+
+</script>
+<body>
+    <h3>angularjs指令-循环对象数组</h3>
+
+    <!--表示引用pinyougou模块-->
+    <div ng-app="pinyougou" ng-controller="demoController">
+        <!--循环数组元素-->
+        <div ng-repeat="entity in list">
+            {{entity.username}}的语文得了{{entity.yuwen}}分,数学得了{{entity.shuxue}}分
+        </div>
+    </div>
+
+</body>
+</html>
